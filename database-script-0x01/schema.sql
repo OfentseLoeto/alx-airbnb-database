@@ -1,4 +1,4 @@
-CREATE TABLE USERS (
+CREATE TABLE User (
     user_id VARCHAR(36) PRIMARY KEY,
     first_name VARCHAR(255) NOT NULL,
     last_name VARCHAR(255) NOT NULL,
@@ -17,14 +17,14 @@ CREATE TABLE Property (
     description TEXT NOT NULL,
     location VARCHAR(255) NOT NULL,
     pricepernight DECIMAL(10, 2) NOT NULL,
-    created_at CURRENT_TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     FOREIGN KEY (host_id) REFERENCES User(user_id)
 );
 
 -- Create Booking table
 CREATE TABLE Booking (
-    Booking_id VARCHAR(36) PRIMARY KEY,
+    booking_id VARCHAR(36) PRIMARY KEY,
     property_id VARCHAR(36) NOT NULL,
     user_id VARCHAR(36) NOT NULL,
     start_date DATE NOT NULL,
