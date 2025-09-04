@@ -1,4 +1,4 @@
-CREATE TABLE User (
+DROP TABLE IF EXISTS User (
     user_id VARCHAR(36) PRIMARY KEY,
     first_name VARCHAR(255) NOT NULL,
     last_name VARCHAR(255) NOT NULL,
@@ -10,7 +10,7 @@ CREATE TABLE User (
 );
 
 -- Create Property table
-CREATE TABLE Property (
+CREATE TABLE IF NOT EXISTS Property (
     property_id VARCHAR(36) PRIMARY KEY,
     host_id VARCHAR(36) NOT NULL,
     name VARCHAR(255) NOT NULL,
@@ -23,7 +23,7 @@ CREATE TABLE Property (
 );
 
 -- Create Booking table
-CREATE TABLE Booking (
+CREATE TABLE IF NOT EXISTS Booking (
     booking_id VARCHAR(36) PRIMARY KEY,
     property_id VARCHAR(36) NOT NULL,
     user_id VARCHAR(36) NOT NULL,
@@ -37,7 +37,7 @@ CREATE TABLE Booking (
 );
 
 -- Create Payment table
-CREATE TABLE Payment (
+CREATE TABLE IF NOT EXISTS Payment (
     payment_id VAARCHAR(36) PRIMARY KEY,
     booking_id VARCHAR(36) PRIMARY KEY,
     amount DECIMAL(10, 2) NOT NULL,
@@ -47,7 +47,7 @@ CREATE TABLE Payment (
 );
 
 -- Create Review table
-CREATE TABLE Review (
+CREATE TABLE IF NOT EXISTS Review (
     review_id VARCHAR(36) PRIMARY KEY,
     property_id VARCHAR(36) NOT NULL,
     user_id VARCHAR(36) NOT NULL,
@@ -59,7 +59,7 @@ CREATE TABLE Review (
 );
 
 -- Create Message table
-CREATE TABLE Message (
+CREATE TABLE IF NOT EXISTS Message (
     message_id VARCHAR(36) PRIMARY KEY,
     sender_id VARCHAR(36) NOT NULL,
     recepient_id VARCHAR(36) NOT NULL,
