@@ -1,4 +1,4 @@
-CREATE TABLE IF EXISTS User (
+CREATE TABLE IF NOT EXISTS User (
     user_id VARCHAR(36) PRIMARY KEY,
     first_name VARCHAR(255) NOT NULL,
     last_name VARCHAR(255) NOT NULL,
@@ -38,11 +38,11 @@ CREATE TABLE IF NOT EXISTS Booking (
 
 -- Create Payment table
 CREATE TABLE IF NOT EXISTS Payment (
-    payment_id VAARCHAR(36) PRIMARY KEY,
+    payment_id VARCHAR(36) PRIMARY KEY,
     booking_id VARCHAR(36) PRIMARY KEY,
     amount DECIMAL(10, 2) NOT NULL,
     payment_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    payment_method ENUM('credit_cart', 'paypal', 'stripe') NOT NULL,
+    payment_method ENUM('credit_card', 'paypal', 'stripe') NOT NULL,
     FOREIGN KEY(booking_id) REFERENCES(booking_id)
 );
 
