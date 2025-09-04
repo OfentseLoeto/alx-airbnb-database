@@ -1,3 +1,4 @@
+-- Create User table
 CREATE TABLE IF NOT EXISTS User (
     user_id VARCHAR(36) PRIMARY KEY,
     first_name VARCHAR(255) NOT NULL,
@@ -78,5 +79,5 @@ CREATE INDEX idx_payment_booking_id ON Payment(booking_id);
 CREATE INDEX idx_review_property_id ON Review(property_id);
 CREATE INDEX idx_review_user_id ON Review(user_id);
 CREATE INDEX idx_message_sender_id ON Message(sender_id);
-CREATE INDEX idx_message_recipient_id ON Message(recepient_id);
+CREATE INDEX idx_message_recipient_id ON Message(recipient_id);
 
