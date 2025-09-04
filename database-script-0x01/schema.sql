@@ -1,4 +1,4 @@
-DROP TABLE IF EXISTS User (
+CREATE TABLE IF EXISTS User (
     user_id VARCHAR(36) PRIMARY KEY,
     first_name VARCHAR(255) NOT NULL,
     last_name VARCHAR(255) NOT NULL,
