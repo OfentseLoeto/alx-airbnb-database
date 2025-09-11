@@ -17,7 +17,7 @@ FROM
     Properties AS p
 LEFT JOIN
     Reviews AS r ON p.property_id = r.property_id;
-3. FULL OUTER JOINObjective: To retrieve all users and all bookings, even if the user has no booking or a booking is not linked to a user.A FULL OUTER JOIN returns all records when there is a match in either the left or the right table. This is useful for finding "orphaned" records on either side of the join.Note on MySQL: Older versions of MySQL do not support the FULL OUTER JOIN syntax directly. The query below uses a combination of LEFT JOIN, RIGHT JOIN, and the UNION operator to achieve the same result. This is a common workaround for this limitation.-- This query works on all standard SQL databases
+
 SELECT
     u.user_id,
     u.username,
@@ -29,8 +29,6 @@ FROM
 FULL OUTER JOIN
     Bookings AS b ON u.user_id = b.user_id;
 
-
--- This query is the workaround for older MySQL versions
 SELECT
     u.user_id,
     u.username,
@@ -56,3 +54,4 @@ RIGHT JOIN
     Bookings AS b ON u.user_id = b.user_id
 WHERE
     u.user_id IS NULL;
+
