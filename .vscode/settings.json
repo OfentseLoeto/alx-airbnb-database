@@ -5,15 +5,32 @@
                 "authProtocol": "default",
                 "enableSsl": "Disabled"
             },
+            "ssh": "Disabled",
             "previewLimit": 50,
-            "server": "127.0.0.1",
+            "server": "localhost",
             "port": 3306,
             "driver": "MySQL",
-            "name": "airBnB Local DB",
-            "database": "airbnb_db",
+            "name": "MyLocalDB",
+            "database": "airBnB_db",
             "username": "theo",
             "password": "040354a/A",
             "connectionTimeout": 60
+        },
+        {
+            "mysqlOptions": {
+                "authProtocol": "default",
+                "enableSsl": "Disabled"
+            },
+            "ssh": "Disabled",
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 3306,
+            "driver": "MySQL",
+            "name": "MyLocalDB",
+            "database": "airbnb_db",
+            "username": "theo",
+            "password": "040354a/A",
+            "connectionTimeout": 160
         }
     ]
 }
