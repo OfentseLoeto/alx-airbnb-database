@@ -14,12 +14,14 @@ SELECT
     p.property_id,
     p.location,
     p.pricepernight,
+    r.review_id,
     r.rating,
     r.comment
 FROM
     Property AS p
-LEFT JOIN
-    Review AS r ON p.property_id = r.property_id;
+    ON p.property_id = r.property_id
+ORDER BY
+    p.property_id;
 
 UNION
 
