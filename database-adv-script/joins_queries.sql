@@ -19,9 +19,10 @@ SELECT
     r.comment
 FROM
     Property AS p
+LEFT JOIN Review AS r
     ON p.property_id = r.property_id
 ORDER BY
-    p.property_id;
+    p.property_id, r.review_id;
 
 UNION
 
