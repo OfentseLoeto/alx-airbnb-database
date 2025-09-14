@@ -32,6 +32,8 @@ FROM
     Users AS u
 LEFT JOIN
     Booking AS b ON u.user_id = b.user_id
+WHERE
+    u.user_is IS NULL
 
 UNION
 
@@ -45,7 +47,7 @@ SELECT
     b.end_date
 FROM
     Users AS u
-RIGHT JOIN
+FULL OUTER JOIN
     Booking AS b on u.user_id = b.user_id
 WHERE
     u.user_id IS NULL;
