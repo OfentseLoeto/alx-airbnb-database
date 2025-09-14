@@ -9,7 +9,7 @@ WHERE p.property_id IN (
     SELECT r.property_id
     FROM Review r
     GROUP BY r.property_id
-    HAVING AVR(r.rating) > 4.0
+    HAVING AVG(r.rating) > 4.0
 );
 
 --- Find all users who have made more than 3 bookings ---
