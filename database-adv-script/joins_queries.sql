@@ -14,26 +14,12 @@ SELECT
     p.property_id,
     p.location,
     p.pricepernight,
-    r.rating
+    r.rating,
+    r.comment
 FROM
     Property AS p
 LEFT JOIN
     Review AS r ON p.property_id = r.property_id;
-
-SELECT
-    u.user_id,
-    u.first_name,
-    u.last_name,
-    u.email,
-    b.booking_id,
-    b.start_date,
-    b.end_date
-FROM
-    Users AS u
-LEFT JOIN
-    Booking AS b ON u.user_id = b.user_id
-WHERE
-    u.user_is IS NULL
 
 UNION
 
