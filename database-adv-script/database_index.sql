@@ -10,7 +10,7 @@ CREATE INDEX idx_booking_date ON Booking(booking_date);
 CREATE INDEX idx_property_location ON Property(location);
 
 --- Join Users and Booking tables on user_id
-EXPLAIN
+EXPLAIN ANALYZE
 SELECT
     u.first_name,
     u.last_name,
@@ -22,7 +22,7 @@ WHERE b.booking_date > '2025-01-01';
 ORDER BY b.booking_date DESC;
 
 --- Find Properties in a given location
-EXPLAIN
+EXPLAIN ANALYZE
 SELECT
     p.property_name,
     p.location,
@@ -35,7 +35,7 @@ GROUP BY p.property_id, p.title, p.location, p.pricepernight
 ORDER BY total_bookings DESC;
 
 --- Look for Users with aspecific email domain
-EXPLAIN
+EXPLAIN ANALYZE
 SELECT *
 FROM Users
 WHERE email = 'ohentse@gmail.com';
