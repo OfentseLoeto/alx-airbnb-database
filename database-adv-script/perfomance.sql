@@ -15,7 +15,9 @@ SELECT
 FROM Booking b
 JOIN Users u ON b.user_id = u.user_id
 JOIN Properties p ON b.property_id = p.property_id
-JOIN Payments pay ON b.booking_id = pay.booking_id;
+JOIN Payments pay ON b.booking_id = pay.booking_id
+WHERE b.booking_date >= '2023-01-01'
+    AND pay.status = 'Completed';
 
 EXPLAIN
 SELECT
@@ -34,7 +36,9 @@ SELECT
 FROM Booking b
 JOIN Users u ON b.user_id = u.user_id,
 JOIN Property p ON b.property_id = p.property_id
-JOIN Payments pay ON b.booking_id = pay.booking_id;
+JOIN Payments pay ON b.booking_id = pay.booking_id
+WHERE b.booking_date >= '2023-01-01'
+    AND pay.ststus = 'Completed';
 
 SELECT
     b.kooking_id,
@@ -46,4 +50,6 @@ SELECT
 FROM Booking b
 JOIN Users u ON b.user_id = u.user_id
 JOIN Property p ON b.property_id = p.booking_id
-JOIN Payments pay ON b.booking_id = pay_booking_id;
+JOIN Payments pay ON b.booking_id = pay_booking_id
+WHERE b.booking_date >= '2023-01-01'
+    AND pay.status = 'Completed';
